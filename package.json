@@ -1,0 +1,17 @@
+{
+  "name": "firebase-cli-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "bin": {
+    "firebase-cli-app": "./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "firebase-tools": "^13.29.1"
+  }
+}
