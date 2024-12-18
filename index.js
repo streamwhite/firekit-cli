@@ -26,8 +26,7 @@ program
       const projectExists = projectsList.some(
         (project) => project.projectId === projectId
       );
-      const uniqueProjectId =
-        projectId + '-' + new Date().toISOString().replace(/[:.]/g, '-');
+      const uniqueProjectId = projectId + '-' + Date.now();
       if (!projectExists) {
         console.log(`Creating Firebase project: ${uniqueProjectId}...`);
         execSync(`firebase projects:create ${uniqueProjectId}`, {

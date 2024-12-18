@@ -1,10 +1,10 @@
 {
-  "name": "firebase-cli-app",
-  "version": "1.0.0",
+  "name": "easy-firekit-cli",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {},
   "bin": {
-    "firebase-cli-app": "./index.js"
+    "easy-firekit": "./index.js"
   },
   "keywords": [],
   "author": "",
