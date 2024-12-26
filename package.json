@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {},
   "bin": {
-    "easy-firekit": "./index.js"
+    "firekit": "./index.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "commander": "^12.1.0",
-    "firebase-tools": "^13.29.1"
+    "firebase-tools": "^13.29.1",
+    "readline-sync": "^1.4.10"
   }
 }

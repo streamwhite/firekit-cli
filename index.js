@@ -7,8 +7,8 @@ import process from 'node:process';
 const program = new Command();
 
 program
-  .name('firebase-cli-app')
-  .description('CLI tool to manage Firebase projects and apps')
+  .name('quick-fire')
+  .description('CLI tool to manage projects and apps')
   .version('1.0.0');
 
 program
@@ -34,7 +34,7 @@ program
         });
       } else {
         console.log(
-          `it will create web app with existed Firebase project ${uniqueProjectId}`
+          `it will create web app with existed Firebase project ${projectId}`
         );
       }
 
