@@ -63,7 +63,10 @@ program
       fs.writeFileSync('firekit-config.json', config);
 
       // show the config is saved
-      console.log('🎉🎉🎉SDK configuration saved to firekit-config.json🎉🎉🎉');
+      console.log(
+        '\n',
+        '🎉🎉🎉SDK configuration saved to firekit-config.json🎉🎉🎉'
+      );
     } catch (error) {
       console.error('Error during setup:', error.message);
     }
