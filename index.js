@@ -8,7 +8,7 @@ const program = new Command();
 
 program
   .name('quick-fire')
-  .description('CLI tool to quick setup projects and web apps')
+  .description('CLI tool to quick setup firebase projects and web apps')
   .version('1.0.0');
 
 program
