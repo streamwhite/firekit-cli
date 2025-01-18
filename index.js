@@ -8,7 +8,7 @@ const program = new Command();
 
 program
   .name('quick-fire')
-  .description('CLI tool to manage projects and apps')
+  .description('CLI tool to quick setup projects and web apps')
   .version('1.0.0');
 
 program
@@ -60,12 +60,12 @@ program
 
       const config = configOutput.match(regex)[1];
       // save config to a json file
-      fs.writeFileSync('firekit-config.json', config);
+      fs.writeFileSync('app-config.json', config);
 
       // show the config is saved
       console.log(
-        '\n',
-        '🎉🎉🎉SDK configuration saved to firekit-config.json🎉🎉🎉'
+        '\n\n',
+        '🎉🎉🎉SDK configuration saved to app-config.json🎉🎉🎉'
       );
     } catch (error) {
       console.error('Error during setup:', error.message);
