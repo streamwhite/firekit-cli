@@ -8,10 +8,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "dependencies": {
     "commander": "^12.1.0",
+    "firebase-admin": "^13.0.2",
     "firebase-tools": "^13.29.1"
   }
 }

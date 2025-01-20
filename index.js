@@ -72,6 +72,45 @@ program
     }
   });
 
+program
+  .command('enableTotp <projectId> [adjacentIntervals]')
+  .description('Enable TOTP for a Firebase project')
+  .action((projectId, adjacentIntervals = 5) => {
+    try {
+      console.log(`Enabling TOTP for project: ${projectId}...`);
+
+      const accessToken = execSync('gcloud auth print-access-token', {
+        encoding: 'utf-8',
+      }).trim();
+
+      const data = JSON.stringify({
+        mfa: {
+          providerConfigs: [
+            {
+              state: 'ENABLED',
+              totpProviderConfig: {
+                adjacentIntervals: parseInt(adjacentIntervals, 10),
+              },
+            },
+          ],
+        },
+      });
+
+      const response = execSync(
+        `curl -X PATCH "https://identitytoolkit.googleapis.com/admin/v2/projects/${projectId}/config?updateMask=mfa" \
+          -H "Authorization: Bearer ${accessToken}" \
+          -H "Content-Type: application/json" \
+          -H "X-Goog-User-Project: ${projectId}" \
+          -d '${data}'`,
+        { encoding: 'utf-8' }
+      );
+
+      console.log('TOTP enabled successfully:');
+    } catch (error) {
+      console.error('Error enabling TOTP:', error.message);
+    }
+  });
+
 program.parse(process.argv);
 
 // doc: add project id default value
