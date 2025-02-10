@@ -74,7 +74,9 @@ program
 
 program
   .command('enableTotp <projectId> [adjacentIntervals]')
-  .description('Enable TOTP for a Firebase project')
+  .description(
+    'Enable TOTP for a Firebase project, it requires gcloud sdk installed'
+  )
   .action((projectId, adjacentIntervals = 5) => {
     try {
       console.log(`Enabling TOTP for project: ${projectId}...`);
@@ -96,7 +98,7 @@ program
         },
       });
 
-      const response = execSync(
+      execSync(
         `curl -X PATCH "https://identitytoolkit.googleapis.com/admin/v2/projects/${projectId}/config?updateMask=mfa" \
           -H "Authorization: Bearer ${accessToken}" \
           -H "Content-Type: application/json" \
@@ -105,7 +107,7 @@ program
         { encoding: 'utf-8' }
       );
 
-      console.log('TOTP enabled successfully:');
+      console.log('TOTP enabled successfully.');
     } catch (error) {
       console.error('Error enabling TOTP:', error.message);
     }
