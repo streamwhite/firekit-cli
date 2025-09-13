@@ -1,15 +1,43 @@
 {
   "name": "quick-fire-cli",
   "version": "1.0.4",
+  "description": "CLI tool to quick setup firebase projects and web apps",
   "main": "index.js",
-  "scripts": {},
+  "type": "module",
   "bin": {
-    "quick-fire": "./index.js"
+    "qfc": "./index.js"
   },
-  "keywords": [],
+  "scripts": {
+    "start": "node ./index.js",
+    "prepublishOnly": "npm test",
+    "publish:patch": "npm version patch && npm publish",
+    "publish:minor": "npm version minor && npm publish"
+  },
+  "keywords": [
+    "firebase",
+    "cli",
+    "setup",
+    "web-app",
+    "totp",
+    "firebase-tools"
+  ],
   "author": "",
-  "license": "MIT",
-  "description": "",
+  "license": "Apache License 2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/streamwhite/firekit-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/streamwhite/firekit-cli/issues"
+  },
+  "homepage": "https://github.com/streamwhite/firekit-cli#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ],
   "dependencies": {
     "commander": "^12.1.0",
     "firebase-admin": "^13.0.2",

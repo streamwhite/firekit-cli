@@ -7,9 +7,9 @@ import process from 'node:process';
 const program = new Command();
 
 program
-  .name('quick-fire')
+  .name('quick-fire-cli')
   .description('CLI tool to quick setup firebase projects and web apps')
-  .version('1.0.0');
+  .version('1.1.0');
 
 program
   .command('setup <projectId> <appName>')
@@ -114,6 +114,3 @@ program
   });
 
 program.parse(process.argv);
-
-// doc: add project id default value
-// doc: projectId new project name or existing project id, it will add utc time to the project id, use a meaningful name(no prd test like)
